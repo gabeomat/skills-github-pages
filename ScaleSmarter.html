@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Smarter: 5 Leverage Moves You Can Make Now</title>
+    <style>
+        :root {
+            /* AI Coachbox Brand Colors */
+            --champagne-gold: #E6C9A8;
+            --midnight-teal: #1A2F34;
+            --electric-orchid: #D45EFF;
+            --pearl-white: #FAFAFA;
+            --charcoal-black: #1C1C1C;
+            --soft-chrome: #D8D8D8;
+            --neon-mint: #00FFCC;
+        }
+
+        body {
+            background-color: var(--pearl-white);
+            color: var(--midnight-teal);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Typography System as specified in brand stack */
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0;
+        }
+
+        .subtitle, blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        /* Page designs */
+        .page {
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background-color: var(--midnight-teal);
+            color: var(--pearl-white);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+        }
+
+        .cover-page h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-page .subtitle {
+            font-size: 1.5rem;
+            max-width: 80%;
+            margin: 1rem auto 2rem;
+            color: var(--champagne-gold);
+            position: relative;
+            z-index: 2;
+        }
+
+        .decorative-element {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 94, 255, 0.15) 0%, rgba(26, 47, 52, 0) 70%);
+            z-index: 0;
+        }
+
+        .decorative-element.top-right {
+            top: -100px;
+            right: -100px;
+        }
+
+        .decorative-element.bottom-left {
+            bottom: -100px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(0, 255, 204, 0.15) 0%, rgba(26, 47, 52, 0) 70%);
+        }
+
+        /* Introduction Page */
+        .intro-page {
+            background-color: white;
+            padding: 50px 40px;
+        }
+
+        .intro-page h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--midnight-teal);
+            position: relative;
+            display: inline-block;
+        }
+
+        .intro-page h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background-color: var(--electric-orchid);
+        }
+
+        .intro-page p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-page strong {
+            color: var(--electric-orchid);
+            font-weight: 600;
+        }
+
+        /* Content Pages - Leverage Moves */
+        .content-page {
+            padding: 50px 40px;
+            background-color: white;
+            position: relative;
+        }
+
+        .content-page h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--midnight-teal);
+            text-align: center;
+        }
+
+        .move-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .move-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--pearl-white);
+            border-radius: 8px;
+            border-left: 4px solid var(--electric-orchid);
+            position: relative;
+        }
+
+        .move-item h3 {
+            margin-top: 0;
+            color: var(--midnight-teal);
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+
+        .move-item h3 .number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--electric-orchid);
+            color: white;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1rem;
+        }
+
+        .move-item p {
+            margin-bottom: 0;
+            margin-left: 48px;
+        }
+
+        /* Reflection Prompt */
+        .reflection-prompt {
+            background-color: var(--pearl-white);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .reflection-prompt h4 {
+            color: var(--midnight-teal);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .reflection-prompt p {
+            margin-bottom: 0;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* CTA Page */
+        .cta-page {
+            background-color: var(--pearl-white);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-page h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--midnight-teal);
+        }
+
+        .cta-page p {
+            font-size: 1.1rem;
+            max-width: 90%;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--electric-orchid);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #c140f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 94, 255, 0.3);
+        }
+
+        .circle-accent {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .circle-accent.top-right {
+            top: 10%;
+            right: 10%;
+            background-color: rgba(0, 255, 204, 0.1);
+        }
+
+        .circle-accent.bottom-left {
+            bottom: 10%;
+            left: 10%;
+            background-color: rgba(212, 94, 255, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--midnight-teal);
+            color: var(--pearl-white);
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="page cover-page">
+            <div class="decorative-element top-right"></div>
+            <div class="decorative-element bottom-left"></div>
+            
+            <div class="logo-container" style="width: 250px; margin: 20px auto;">
+                <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2157918191/settings_images/646e7ec-2ef4-673e-71d0-64056b100714_AI_COACHBOX_2_.png" alt="AI Coachbox Logo" style="width: 100%; height: auto;">
+            </div>
+            
+            <h1>SCALE SMARTER</h1>
+            <div class="subtitle">5 Leverage Moves You Can Make Now</div>
+            
+            <div class="subtitle" style="margin-top: 40px; font-size: 1.2rem;">
+                Use AI to Free Up Your Time Without Adding More Headcount, Hours, or Burnout
+            </div>
+        </div>
+
+        <!-- Introduction Page -->
+        <div class="page intro-page">
+            <h2>WHY SMARTER SCALING MATTERS MORE THAN EVER</h2>
+            
+            <p>Make no mistake: AI isn't just another shiny tool—it's the next industrial revolution. What steam power did for manufacturing, AI is doing for intellectual work. It's fundamentally reshaping how business operates.</p>
+            
+            <p>In today's market, the divide is growing between those who harness AI strategically and those who fall behind. This isn't about working harder or hiring more people—it's about <strong>working at an entirely different level</strong>.</p>
+            
+            <p>AI literacy isn't optional anymore—it's a non-negotiable skill for every entrepreneur who intends to remain relevant. The coaches and consultants who recognize this shift early will create insurmountable advantages in their industries.</p>
+            
+            <p>Inside this guide, you'll discover <strong>5 leverage moves</strong> that represent the beginning of what's possible when you approach AI as a strategic asset, not just a tactical tool. These aren't futuristic concepts—they're immediate opportunities to create more capacity, deliver extraordinary client experiences, and position yourself ahead of the curve.</p>
+            
+            <p>The future belongs to those who see what others don't.</p>
+        </div>
+
+        <!-- Content Page - Leverage Moves -->
+        <div class="page content-page">
+            <h2>5 AI LEVERAGE MOVES</h2>
+            
+            <ul class="move-list">
+                <li class="move-item">
+                    <h3><span class="number">1</span> AI Client Onboarding Automation</h3>
+                    <p>Set up an AI assistant that welcomes new clients, answers FAQs, collects onboarding info, and preps them for success — without needing manual back-and-forth emails.</p>
+                </li>
+                
+                <li class="move-item">
+                    <h3><span class="number">2</span> Automated Session Summaries</h3>
+                    <p>Use AI to generate and send session notes to your clients after coaching or service sessions, reinforcing key insights and next steps instantly.</p>
+                </li>
+                
+                <li class="move-item">
+                    <h3><span class="number">3</span> Personalized Drip Support</h3>
+                    <p>Create a simple AI-driven sequence that checks in with clients after milestones (e.g., "Week 2 Progress Check-In"), making your support feel personal without draining your time.</p>
+                </li>
+                
+                <li class="move-item">
+                    <h3><span class="number">4</span> Proposal or Quote Automation</h3>
+                    <p>Let AI draft customized proposals, offers, or renewal packages based on a few client inputs — helping you close deals faster.</p>
+                </li>
+                
+                <li class="move-item">
+                    <h3><span class="number">5</span> Internal Knowledge Base for Your Team</h3>
+                    <p>Build a basic AI knowledge base trained on your SOPs, FAQs, and client processes — so your (future) team can self-serve answers without pulling you into every minor question.</p>
+                </li>
+            </ul>
+            
+            <div class="reflection-prompt" style="background-color: var(--pearl-white); border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0;">
+                <h4><span class="emoji">✅</span> FROM INSIGHT TO ACTION</h4>
+                <p style="font-weight: 500; margin-bottom: 15px;">Which ONE leverage move would create the most immediate impact for your business?</p>
+                
+                <div style="display: flex; margin-top: 20px; text-align: left; flex-direction: column;">
+                    <!-- Current State Assessment -->
+                    <div style="padding: 20px; background-color: rgba(216, 216, 216, 0.2); border-radius: 8px; margin-bottom: 15px; border-left: 3px solid var(--soft-chrome);">
+                        <h5 style="margin-top: 0; color: var(--midnight-teal); font-size: 1rem; letter-spacing: 0.05em;">CURRENT REALITY CHECK</h5>
+                        <p style="font-size: 0.9rem; margin-bottom: 8px;">How many hours per week do you currently spend on this task?</p>
+                        <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                        <p style="font-size: 0.9rem; margin-bottom: 8px; margin-top: 15px;">What is this costing you in terms of opportunity, energy, or revenue?</p>
+                        <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                    </div>
+                    
+                    <!-- Implementation Requirements -->
+                    <div style="padding: 20px; background-color: rgba(230, 201, 168, 0.15); border-radius: 8px; margin-bottom: 15px; border-left: 3px solid var(--champagne-gold);">
+                        <h5 style="margin-top: 0; color: var(--midnight-teal); font-size: 1rem; letter-spacing: 0.05em;">IMPLEMENTATION REQUIREMENTS</h5>
+                        <div style="display: flex;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <p style="font-size: 0.9rem; margin-bottom: 8px;">Specific tools/platforms needed:</p>
+                                <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                            </div>
+                            <div style="flex: 1; margin-left: 10px;">
+                                <p style="font-size: 0.9rem; margin-bottom: 8px;">Key content to prepare:</p>
+                                <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ROI Calculation -->
+                    <div style="padding: 20px; background-color: rgba(212, 94, 255, 0.1); border-radius: 8px; margin-bottom: 15px; border-left: 3px solid var(--electric-orchid);">
+                        <h5 style="margin-top: 0; color: var(--midnight-teal); font-size: 1rem; letter-spacing: 0.05em;">VALUE CREATION</h5>
+                        <p style="font-size: 0.9rem; margin-bottom: 8px;">Hours potentially saved per week:</p>
+                        <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                        <p style="font-size: 0.9rem; margin-bottom: 8px; margin-top: 15px;">What could you do with this reclaimed time that would directly impact revenue?</p>
+                        <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                    </div>
+                    
+                    <!-- Decision & Action Step -->
+                    <div style="padding: 20px; background-color: rgba(216, 216, 216, 0.2); border-radius: 8px; border-left: 3px solid var(--soft-chrome);">
+                        <h5 style="margin-top: 0; color: var(--midnight-teal); font-size: 1rem; letter-spacing: 0.05em;">EXECUTION DECISION</h5>
+                        <div style="display: flex; margin-bottom: 15px;">
+                            <div style="flex: 1; margin-right: 5px;">
+                                <div style="padding: 10px; background-color: white; border-radius: 4px; text-align: center;">
+                                    <label style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="checkbox" style="margin-right: 8px;">
+                                        <span style="font-size: 0.9rem; font-weight: 500;">DIY Implementation</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div style="flex: 1; margin-left: 5px;">
+                                <div style="padding: 10px; background-color: white; border-radius: 4px; text-align: center;">
+                                    <label style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="checkbox" style="margin-right: 8px;">
+                                        <span style="font-size: 0.9rem; font-weight: 500;">Expert Implementation</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 0.9rem; margin-bottom: 8px; font-weight: 500;">My committed first step (next 48 hours):</p>
+                        <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                        <p style="font-size: 0.9rem; margin-top: 15px; font-weight: 500;">Target completion date:</p>
+                        <div style="border-bottom: 1px solid #e0e0e0; height: 25px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Page -->
+        <div class="page cta-page">
+            <div class="circle-accent top-right"></div>
+            <div class="circle-accent bottom-left"></div>
+            
+            <h2><span class="emoji">🎯</span> READY TO START SCALING SMARTER — BEFORE THE MASTERCLASS EVEN BEGINS?</h2>
+            
+            <p>You don't have to wait to start building a more scalable, AI-powered business.</p>
+            
+            <p>If you're ready to explore how we can help you implement these leverage moves <em>now</em> — and start freeing up your time — let's chat.</p>
+            
+            <a href="https://calendly.com/gabriel-eaa/ai-strategy-session" class="cta-button">
+                Book a FREE Exploration Call
+            </a>
+            
+            <p style="margin-top: 2rem;">We'll map out your best next move together.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="logo">AI COACHBOX</div>
+        </div>
+    </div>
+</body>
+</html>
